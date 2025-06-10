@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>瑟符介紹</title>
+  <style>
+    .container {
+      overflow: hidden; /* 清除浮動影響 */
+    }
+    .container img {
+      float: left; /* 讓圖片浮動到左邊 */
+      margin-right: 20px; /* 控制圖片和文字之間的間距 */
+    }
+	  .container video {
+      float: right;
+      margin-right: 200px
+    }
+    body{
+    background-color:#0F1923;
+
+	  }
+    .content video {
+      display: none;
+      width: 100%;
+      max-height: 400px;
+      max-width:700px
+    }
+    .content video.active {
+      display: block;
+      }
+    a{
+      text-decoration: none
+    }
+  </style>
+<script>
+  function showVideo(id) {
+    // 隱藏所有影片
+    const videos = document.querySelectorAll('.content video');
+    videos.forEach(video => video.classList.remove('active'));
+    
+    // 顯示選擇的影片
+    const selectedVideo = document.getElementById(id);
+    if (selectedVideo) {
+      selectedVideo.classList.add('active');
+    }
+  }
+</script>
+</head>
+<body>  
+  <div class="container">
+    <img src="../瑟符.webp" alt="圖片" width="600" height="780">
+    <p style="text-align: center;font-size: 90px;font-weight: bold;color:#E15B5D;vertical-align: top">瑟符</p>
+    <div class="content">
+      <video id="video-1" controls autoplay muted style="width:800px;height:600px">
+        <source src="網戰牢籠影片.mp4" type="video/mp4">
+      </video>
+      <video id="video-2" controls autoplay muted style="width:800px;height:600px">
+        <source src="陷阱絆索影片.mp4" type="video/mp4">
+      </video>
+      <video id="video-3" controls autoplay muted style="width:800px;height:600px">
+        <source src="監控攝影機影片.mp4" type="video/mp4">
+      </video>
+      <video id="video-4" controls autoplay muted style="width:800px;height:600px">
+        <source src="神經駭客影片.mp4" type="video/mp4">
+      </video>
+    
+  </div>
+    <a href="#" onclick="showVideo('video-1')">
+      <p style="font-size:50px;color: #FFFFFF"><img src="網戰牢籠圖片.png" alt="網戰牢籠">網戰牢籠</p>
+    </a>
+    <a href="#" onclick="showVideo('video-2')">
+      <p style="font-size:50px;color: #FFFFFF"><img src="陷阱絆索圖片.png" alt="陷阱絆索">陷阱絆索</p>
+    </a>
+    <a href="#" onclick="showVideo('video-3')">
+      <p style="font-size:50px;color: #FFFFFF"><img src="監控攝影機圖片.png" alt="監控攝影機">監控攝影機</p>
+    </a>
+    <a href="#" onclick="showVideo('video-4')">
+      <p style="font-size:50px;color: #FFFFFF"><img src="神經駭客圖片.png" alt="神經駭客">神經駭客</p>
+    </a>
+    
+  </div>
+</body>
+	<a href="../守衛角色選擇程式.html" style="color:#79F8EE"><p style="text-align: center;color: #09E2F4;line-height: 50px">上一頁</p></a><a href="../../角色定位程式.html" style="color:#79F8EE"><p style="text-align: center;color: #09E2F4">回首頁</p></a>
+</html>
