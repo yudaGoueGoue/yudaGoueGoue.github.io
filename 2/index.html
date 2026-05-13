@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>台灣傳統美食</title>
+</head>
+
+<body>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr><style>
+    /* 整條分類列 */
+    .category-bar {
+        position: sticky;          /* 捲動時黏在上方 */
+        top: 0;
+        z-index: 99;
+        background: #ffffff;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e5e5;
+        overflow-x: auto;          /* 手機版可滑動 */
+        white-space: nowrap;
+    }
+
+    /* 取消捲軸外觀（手機更漂亮） */
+    .category-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 內層排列 */
+    .category-menu {
+        display: inline-flex;
+        gap: 25px;                 /* 文字間距 */
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    /* 每個分類 */
+    .category-menu a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0 10px;
+    }
+
+    /* 滑過顏色 */
+    .category-menu a:hover {
+        color: blue;
+    }
+
+    /* 分隔線 */
+    .category-menu a:not(:last-child)::after {
+        content: "│";
+        color: #ccc;
+        position: absolute;
+        right: -15px;
+    }
+</style>
+
+<div class="category-bar">
+    <div class="category-menu">
+        <a href="#">最新食譜</a>
+        <a href="#">人氣食譜</a>
+        <a href="#">萬聖節</a>
+        <a href="#">造型點心</a>
+        <a href="#">露營</a>
+        <a href="#">栗子</a>
+        <a href="#">山藥</a>
+        <a href="#">親子</a>
+        <a href="#">銀髮友善</a>
+        <a href="#">烘焙點心 & 甜點</a>
+        <a href="#">早餐</a>
+        <a href="#">素食</a>
+    </div>
+</div>
+
+      <td colspan="2" align="center" bgcolor="#B19D60">&nbsp;<table width="100%">
+  <tr>
+    <td style="font-size:48px; font-weight:bold;">
+      2025最新【B級美食盤點】最受歡迎的10大台灣小吃
+    </td>
+  </tr>
+</table>
+</td>
+      <h1></h1>
+    </tr>
+    <tr>
+      <td colspan="2" align="center" valign="middle" bgcolor="#784213"><img src="1.JPG" alt="" width="50%"/></tr>
+    <tr>
+    <!-- 左側：Logo + 文字 -->
+    <td width="40%" align="left" valign="top" bgcolor="#F5EFDF">
+        <img src="LOGO.png" width="150" height="150" alt=""/>
+<p>Tech淨化台灣</p>
+        <p>訂位電話 | 02-23513345</p>
+        <p>傳真專線 | 02-23514112</p>
+        <p>客服信箱 | msc@fy-bio.com</p>
+    </td>
+
+    <!-- 右側：客戶意見表單 -->
+    <td width="60%" align="left" valign="top" bgcolor="#F5EFDF">
+        <div class="right">
+            <h3>客戶意見</h3>
+            <form>
+                <label>姓名 *</label>
+                <input type="text" required>
+
+                <label>電子郵件 *</label>
+                <input type="email" required>
+
+                <label>意見回饋 *</label>
+                <textarea rows="6" required></textarea>
+
+                <button type="submit">送出</button>
+            </form>
+        </div>
+    </td>
+</tr>
+
+    <tr><section class="map-section">
+        
+    </section>
+      <td height="400" colspan="2" align="center" style="padding:0;">
+    <iframe 
+        src="https://maps.google.com/maps?q=台北市&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        style="width:100%; height:100%; border:0; display:block;"
+    ></iframe>
+</td>
+
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

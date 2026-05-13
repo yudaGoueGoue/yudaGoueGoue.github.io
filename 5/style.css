@@ -1,0 +1,111 @@
+/* https://www.youtube.com/watch?v=CLUPkcLQm64 */
+
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;  /* 滾動吸附 */
+    scroll-behavior: smooth;        /* 平滑 */
+}
+
+body {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* 基本style */
+.page {
+    height: 100vh;                  /* 佔滿整個視窗高度 */
+    scroll-snap-align: start;       /* 對齊到頁面頂部 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 標題樣式 */
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+/* page_index */
+.page1 {
+    background: linear-gradient(135deg, #000000 0%, #5e5e5e 100%);
+    /* background-image: url('image/page1_item2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.pic1 {
+    width: 900px;
+    border-radius: 10px;
+}
+
+/* ------------------背景(HOME)------------------- */
+.home {
+    position: absolute;
+    font-size: 240px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.09);
+    letter-spacing: 50px;
+    pointer-events: none;
+}
+
+.top {
+    top: -30px;
+    right: -20px;
+}
+
+.bottom {
+    bottom: -10px;
+    left: 30px;
+}
+/* ------------------背景(HOME)------------------- */
+
+.page2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.page3 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* 動畫箭頭 */
+.page::after {
+    content: '↓';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    opacity: 1;
+    animation: bounce 2s infinite;
+}
+
+/* 最後一頁不顯示箭頭 */
+.page:last-child::after {
+    content: '';
+}
+
+/* 箭頭跳動動畫 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-7px);
+    }
+}
+

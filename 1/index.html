@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界七國美食精選</title>
+<h2 style="text-align:center; font-size:36px; font-weight:bold; margin-top:40px; color:#E57ABD;">
+  世界七國美食精選
+</h2>
+
+<style>
+  /* 背景容器 */
+  .background-div {
+    width: 100%;
+    height:1000px;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* 棋子大小 */
+  .clickable-image {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+  }
+
+  /* 各棋子位置 */
+  .img1 { top: 370px; left: 550px; }       /*美國*/
+  .img2 { top:330px; left: 830px; }        /*法國*/
+  .img3 { top: 375px; right: 840px; }      /*義大利*/
+  .img4 { top: 400px; right: 510px; }      /*韓國*/
+  .img5 { top: 375px; right: 480px; }      /*日本*/
+  .img6 { top: 460px; right: 530px; }      /*台灣*/
+  .img7 { top: 470px; right: 585px; }
+</style>
+</head>
+<body>
+
+<div class="background-div">
+
+  <a href="#"><img src="img/icon1.png" class="clickable-image img1"></a>
+  <a href="#"><img src="img/icon2.png" class="clickable-image img2"></a>
+  <a href="#"><img src="img/icon3.png" class="clickable-image img3"></a>
+  <a href="#"><img src="img/icon4.png" class="clickable-image img4"></a>
+  <a href="#"><img src="img/icon5.png" class="clickable-image img5"></a>
+  <a href="#"><img src="img/icon6.png" class="clickable-image img6"></a>
+  <a href="#"><img src="img/icon7.png" class="clickable-image img7"></a>
+
+</div>
+
+<div class="image-scroll" style="max-width:1000px; margin:20px auto; overflow-x:auto; white-space:nowrap;">
+
+  <a href="#">
+    <img src="img/pic1.jpg" alt="圖片1" style="height:150px; margin-right:10px; display:inline-block;">
+  </a>
+
+  <a href="#">
+    <img src="img/pic2.jpg" alt="圖片2" style="height:150px; margin-right:10px; display:inline-block;">
+  </a>
+
+  <a href="#">
+    <img src="img/pic3.jpg" alt="圖片3" style="height:150px; margin-right:10px; display:inline-block;">
+  </a>
+
+  <a href="#">
+    <img src="img/pic4.jpg" alt="圖片4" style="height:150px; margin-right:10px; display:inline-block;">
+  </a>
+
+  <a href="#">
+    <img src="img/pic5.jpg" alt="圖片5" style="height:150px; margin-right:10px; display:inline-block;">
+  </a>
+
+</div>
+
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留言板</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  h1 { text-align: center; }
+
+  /* 表單樣式 */
+  form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input[type="text"], textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 120px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* 星星評分 */
+  .stars {
+    color: gold;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+  }
+
+  /* 顯示錯誤訊息 */
+  .error {
+    color: red;
+    font-size: 14px;
+    display: none;
+  }
+
+  /* 留言表格 */
+  table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<h1>留言區</h1>
+
+<!-- 留言表單 -->
+<form id="commentForm">
+  <input type="text" id="name" placeholder="請輸入姓名" required>
+  <textarea id="comment" rows="4" placeholder="請輸入評論" required></textarea>
+  
+  <!-- 星星評分 -->
+  <div>
+    評分：
+    <span class="stars" data-value="1">&#9734;</span>
+    <span class="stars" data-value="2">&#9734;</span>
+    <span class="stars" data-value="3">&#9734;</span>
+    <span class="stars" data-value="4">&#9734;</span>
+    <span class="stars" data-value="5">&#9734;</span>
+    <span id="starError" class="error">請選擇星星評分！</span>
+  </div>
+  
+  <button type="submit">送出留言</button>
+</form>
+
+<!-- 留言表格 -->
+<table id="commentsTable">
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>評論</th>
+      <th>好用度</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 留言會動態加入這裡 -->
+  </tbody>
+</table>
+
+<script>
+  const form = document.getElementById('commentForm');
+  const tableBody = document.querySelector('#commentsTable tbody');
+  const stars = document.querySelectorAll('.stars');
+  const starError = document.getElementById('starError');
+  let selectedRating = 0;
+
+  // 星星互動
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      highlightStars(parseInt(star.dataset.value));
+    });
+    star.addEventListener('mouseout', () => {
+      highlightStars(selectedRating);
+    });
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.dataset.value);
+      highlightStars(selectedRating);
+      starError.style.display = 'none'; // 點選後隱藏錯誤訊息
+    });
+  });
+
+  function highlightStars(rating) {
+    stars.forEach(star => {
+      const value = parseInt(star.dataset.value);
+      star.textContent = value <= rating ? '★' : '☆';
+    });
+  }
+
+  // 送出留言
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const comment = document.getElementById('comment').value.trim();
+
+    // 檢查是否有選星星
+    if(selectedRating === 0) {
+      starError.style.display = 'inline';
+      return;
+    }
+
+    if(!name || !comment) return;
+
+    // 建立表格列
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${name}</td>
+      <td>${comment}</td>
+      <td>${'★'.repeat(selectedRating) + '☆'.repeat(5 - selectedRating)}</td>
+    `;
+    tableBody.appendChild(row);
+
+    // 清空表單
+    form.reset();
+    selectedRating = 0;
+    highlightStars(0);
+  });
+</script>
+
+</body>
+</html>
